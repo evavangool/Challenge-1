@@ -1,0 +1,42 @@
+body{
+  font-family: RobotoNormal;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row-gap: 15px;
+  grid-column-gap: 15px;
+
+  grid-template-areas:
+        "title title"
+        "menu menu"
+        "main1 ad1"
+        "ad2 main2"
+        "foot foot"
+}
+
+.header{
+  grid-area: title;
+}
+
+.main1{
+  grid-area: main1;
+}
+
+.main2{
+  grid-area: main2;
+}
+
+#menu {
+  grid-area: menu;
+}
+
+.ad1 {
+  grid-area: ad1;
+}
+.ad2 {
+  grid-area: ad2;
+}
+
+.foot {
+  grid-area: foot;
+}
