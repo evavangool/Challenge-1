@@ -1,0 +1,104 @@
+
+
+body{
+  font-family: brandon-grotesque, sans-serif;
+  font-weight: 100;
+  font-style: normal;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row-gap: 15px;
+  grid-column-gap: 15px;
+
+  grid-template-areas:
+        "title title"
+        "main1 main1"
+        "main2 main2"
+        "main3 main3"
+        "main4 main4"
+        "foot foot"
+}
+
+h1, h2{
+  font-weight: 300;
+}
+.header{
+  grid-area: title;
+}
+
+.main1{
+  grid-area: main1;
+}
+
+.main2{
+  grid-area: main2;
+}
+
+.main3{
+  grid-area: main3;
+}
+
+.main4{
+  grid-area: main4;
+}
+
+#menu {
+  grid-area: menu;
+}
+
+
+.foot {
+  grid-area: foot;
+}
+
+/* iPad  ------------------------------------------------------------------------------------------------ */
+@media all and (min-width: 654px) and (max-width: 1023px){
+
+  body{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 15px;
+    grid-column-gap: 15px;
+
+    grid-template-areas:
+          "title title"
+          "main1 main1"
+          "main2 main2"
+          "main3 main3"
+          "main4 main4"
+          "foot foot"
+  }
+}
+
+/* Macbook ------------------------------------------------------------------------------------------------ */
+@media all and (min-width: 1024px) and (max-width: 1599px){
+
+  body{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 15px;
+    grid-column-gap: 15px;
+
+    grid-template-areas:
+          "title title"
+          "main1 main2"
+          "main3 main4"
+          "foot foot"
+  }
+}
+
+/* iMac ------------------------------------------------------------------------------------------------ */
+@media all and (min-width: 1600px) {
+
+  body{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-row-gap: 15px;
+    grid-column-gap: 15px;
+
+    grid-template-areas:
+          "title title title title"
+          "main1 main2 main3 main4"
+          "foot foot foot foot"
+  }
+}
