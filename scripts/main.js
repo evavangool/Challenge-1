@@ -1,13 +1,82 @@
+/*DIT IS VOOR MAIN 1--------------------------------*/
+
+window.onload = function() {
+	CanvasJS.addColorSet("pieShades",
+	        [//colorSet Array
+
+	        "#DE625E", //beetje roze
+	        "#3E484B", //grijs achtig
+	        "#67B6AA", //zee blauw
+	        "#E7C733", //geel
+					"#A2D3EA", //licht blauw
+	    ]);
+
+var eetPercentage = [87.5,75,75,75,87.5]
+
+var pie = new CanvasJS.Chart("chartContainer1", {
+		colorSet: "pieShades",
+		animationEnabled: true,
+		data: [{
+		type: "pie",
+		startAngle: 240,
+		yValueFormatString: "##0.00\"%\"",
+		indexLabel: "{label} {y}",
+		dataPoints: [
+			{y: 100 - eetPercentage[0], label: "Tussendoortjes"},
+			{y: 100 - eetPercentage[1], label: "Ontbijt"},
+			{y: 100 - eetPercentage[2], label: "Middageten"},
+			{y: 100 - eetPercentage[3], label: "Avondeten"},
+			{y: 100 - eetPercentage[4], label: "Toetjes"}
+		]
+	}]
+});
+pie.render();
+
+/*DIT IS VOOR MAIN 2--------------------------------*/
+
+var drinkPercentage = [72, 63, 50, 91]
+
+CanvasJS.addColorSet("pieShades2",
+				[//colorSet Array
+
+				"#A2D3EA", //licht blauw
+				"#3E484B", //grijs achtig
+				"#DE625E", //beetje roze
+				"#E7C733", //geel
+		]);
+
+var pieTwee = new CanvasJS.Chart("chartContainer2", {
+	colorSet: "pieShades2",
+	animationEnabled: true,
+	data: [{
+	type: "pie",
+	startAngle: 240,
+	yValueFormatString: "##0.00\"%\"",
+	indexLabel: "{label} {y}",
+	dataPoints: [
+		{y: 100 - drinkPercentage[0], label: "Alcoholische dranken"},
+		{y: 100 - drinkPercentage[1] , label: "Warme dranken"},
+		{y: 100 - drinkPercentage[2], label: "Koude dranken"},
+		{y: 100 - drinkPercentage[3], label: "Sapjes"},
+	]
+}]
+});
+pieTwee.render();
+
 /*DIT IS VOOR MAIN 3--------------------------------*/
 
 var brandstofPercentage = 25;
 
-window.onload = function () {
+CanvasJS.addColorSet("donutShades",
+				[//colorSet Array
 
+				"#3E484B", //grijs achtig
+				"#DE625E", //beetje roze
+		]);
 
-var chart = new CanvasJS.Chart("chartContainer3", {
+var donut = new CanvasJS.Chart("chartContainer3", {
+	colorSet: "donutShades",
 	animationEnabled: true,
-
 	data: [{
 		type: "doughnut",
 		startAngle: 60,
@@ -21,93 +90,35 @@ var chart = new CanvasJS.Chart("chartContainer3", {
 		]
 	}]
 });
-chart.render();
+donut.render();
 
 
 /*DIT IS VOOR MAIN 4--------------------------------*/
 
-var chart = new CanvasJS.Chart("chartContainer4", {
-	animationEnabled: true,
-	theme: "light2",
-	axisX:{
-		valueFormatString: "DD MMM",
-		crosshair: {
-			enabled: true,
-			snapToDataPoint: true
-		}
-	},
-	axisY: {
-		title: "Number of Visits",
-		crosshair: {
-			enabled: true
-		}
-	},
-	toolTip:{
-		shared:true
-	},
-	legend:{
-		cursor:"pointer",
-		verticalAlign: "bottom",
-		horizontalAlign: "left",
-		dockInsidePlotArea: true,
-		itemclick: toogleDataSeries
-	},
-	data: [{
-		type: "line",
-		showInLegend: true,
-		name: "Total Visit",
-		markerType: "square",
-		xValueFormatString: "DD MMM, YYYY",
-		color: "#F08080",
-		dataPoints: [
-			{ x: new Date(2017, 0, 3), y: 650 },
-			{ x: new Date(2017, 0, 4), y: 700 },
-			{ x: new Date(2017, 0, 5), y: 710 },
-			{ x: new Date(2017, 0, 6), y: 658 },
-			{ x: new Date(2017, 0, 7), y: 734 },
-			{ x: new Date(2017, 0, 8), y: 963 },
-			{ x: new Date(2017, 0, 9), y: 847 },
-			{ x: new Date(2017, 0, 10), y: 853 },
-			{ x: new Date(2017, 0, 11), y: 869 },
-			{ x: new Date(2017, 0, 12), y: 943 },
-			{ x: new Date(2017, 0, 13), y: 970 },
-			{ x: new Date(2017, 0, 14), y: 869 },
-			{ x: new Date(2017, 0, 15), y: 890 },
-			{ x: new Date(2017, 0, 16), y: 930 }
-		]
-	},
-	{
-		type: "line",
-		showInLegend: true,
-		name: "Unique Visit",
-		lineDashType: "dash",
-		dataPoints: [
-			{ x: new Date(2017, 0, 3), y: 510 },
-			{ x: new Date(2017, 0, 4), y: 560 },
-			{ x: new Date(2017, 0, 5), y: 540 },
-			{ x: new Date(2017, 0, 6), y: 558 },
-			{ x: new Date(2017, 0, 7), y: 544 },
-			{ x: new Date(2017, 0, 8), y: 693 },
-			{ x: new Date(2017, 0, 9), y: 657 },
-			{ x: new Date(2017, 0, 10), y: 663 },
-			{ x: new Date(2017, 0, 11), y: 639 },
-			{ x: new Date(2017, 0, 12), y: 673 },
-			{ x: new Date(2017, 0, 13), y: 660 },
-			{ x: new Date(2017, 0, 14), y: 562 },
-			{ x: new Date(2017, 0, 15), y: 643 },
-			{ x: new Date(2017, 0, 16), y: 570 }
-		]
-	}]
+var lijnTabel = new CanvasJS.Chart("chartContainer4",{
+    backgroundColor: "#FFFFFF",
+    animationEnabled: true,
+    data: [{
+    type: "line",
+    lineColor: "#3E484B",
+        dataPoints : [
+		    { label: "12:00 uur",  y: 1000 , markerColor: "#A2D3EA"},
+	      { label: "13:00 uur", y: 1497 , markerColor: "#67B6AA"},
+	      { label: "14:00 uur",  y: 2060 , markerColor: "#A2D3EA"},
+	      { label: "15:00 uur",  y: 2780 , markerColor: "#67B6AA"},
+		    { label: "16:00 uur", y: 3120 , markerColor: "#A2D3EA"},
+		    { label: "17:00 uur",  y: 3987 , markerColor: "#67B6AA"},
+	      { label: "18:00 uur",  y: 4230 , markerColor: "#A2D3EA"},
+	      { label: "19:00 uur",  y: 4780 , markerColor: "#67B6AA"},
+				{ label: "20:00 uur",  y: 5402 , markerColor: "#A2D3EA"},
+				{ label: "21:00 uur",  y: 6740 , markerColor: "#67B6AA"},
+				{ label: "22:00 uur",  y: 6998 , markerColor: "#A2D3EA"},
+				{ label: "23:00 uur",  y: 7653 , markerColor: "#67B6AA"},
+				{ label: "00:00 uur",  y: 8764 , markerColor: "#A2D3EA"},
+			]
+    }]
 });
-chart.render();
+lijnTabel.render();
 
-function toogleDataSeries(e){
-	if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-		e.dataSeries.visible = false;
-	} else{
-		e.dataSeries.visible = true;
-	}
-	chart.render();
-}
 
 }
