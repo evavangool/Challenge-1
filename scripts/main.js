@@ -5,7 +5,7 @@ window.onload = function() {
 	        [//colorSet Array
 
 	        "#DE625E", //beetje roze
-	        "#3E484B", //grijs achtig
+	        "#919197", //grijs achtig
 	        "#67B6AA", //zee blauw
 	        "#E7C733", //geel
 					"#A2D3EA", //licht blauw
@@ -14,7 +14,7 @@ window.onload = function() {
 var eetPercentage = [87.5,75,75,75,87.5]
 
 var pie = new CanvasJS.Chart("pieEten", {
-		backgroundColor: "#E0E0E0",
+		backgroundColor: "#1F2223",
 		colorSet: "pieKleuren",
 		animationEnabled: true,
 		data: [{
@@ -22,6 +22,8 @@ var pie = new CanvasJS.Chart("pieEten", {
 		startAngle: 240,
 		yValueFormatString: "##0.00\"%\"",
 		indexLabel: "{label} {y}",
+		indexLabelFontSize: 15,
+		indexLabelFontColor: "white",
 		dataPoints: [
 			{y: 100 - eetPercentage[0], label: "Tussendoortjes"},
 			{y: 100 - eetPercentage[1], label: "Ontbijt"},
@@ -41,13 +43,13 @@ CanvasJS.addColorSet("pieKleuren2",
 				[//colorSet Array
 
 				"#A2D3EA", //licht blauw
-				"#3E484B", //grijs achtig
+				"#919197", //grijs achtig
 				"#DE625E", //beetje roze
 				"#E7C733", //geel
 		]);
 
 var pieTwee = new CanvasJS.Chart("pieDrinken", {
-		backgroundColor: "#E0E0E0",
+		backgroundColor: "#1F2223",
 		colorSet: "pieKleuren2",
 		animationEnabled: true,
 		data: [{
@@ -55,9 +57,11 @@ var pieTwee = new CanvasJS.Chart("pieDrinken", {
 		startAngle: 240,
 		yValueFormatString: "##0.00\"%\"",
 		indexLabel: "{label} {y}",
+		indexLabelFontSize: 15,
+		indexLabelFontColor: "white",
 		dataPoints: [
 			{y: 100 - drinkPercentage[0], label: "Alcoholische dranken"},
-			{y: 100 - drinkPercentage[1] , label: "Warme dranken"},
+			{y: 100 - drinkPercentage[1], label: "Warme dranken"},
 			{y: 100 - drinkPercentage[2], label: "Koude dranken"},
 			{y: 100 - drinkPercentage[3], label: "Sapjes"},
 		]
@@ -72,19 +76,20 @@ var brandstofPercentage = 25;
 CanvasJS.addColorSet("donutShades",
 				[//colorSet Array
 
-				"#3E484B", //grijs achtig
-				"#DE625E", //beetje roze
+				"#A2D3EA", //licht blauw
+				"#E7C733", //geel
 		]);
 
 var donut = new CanvasJS.Chart("donutBrandstof", {
-		backgroundColor: "#E0E0E0",
+		backgroundColor: "#1F2223",
 		colorSet: "donutShades",
 		animationEnabled: true,
 		data: [{
 		type: "doughnut",
 		startAngle: 60,
 		//innerRadius: 60,
-		indexLabelFontSize: 12,
+		indexLabelFontSize: 15,
+		indexLabelFontColor: "white",
 		indexLabel: "{label} - #percent%",
 		toolTipContent: "<b>{label}:</b> {y} (#percent%)",
 		dataPoints: [
@@ -99,11 +104,18 @@ donut.render();
 /*DIT IS VOOR MAIN 4--------------------------------*/
 
 var lijnTabel = new CanvasJS.Chart("lijnGrafiekKilometer",{
-    backgroundColor: "#E0E0E0",
+    backgroundColor: "#1F2223",
     animationEnabled: true,
+		indexLabelFontSize: 15,
+		axisY:{
+		labelFontColor: "white",
+		},
+		axisX:{
+		labelFontColor: "white",
+		},
     data: [{
     type: "line",
-    lineColor: "#3E484B",
+    lineColor: "white",
         dataPoints : [
 		    { label: "12:00 uur",  y: 1000 , markerColor: "#A2D3EA"},
 	      { label: "13:00 uur",  y: 1497 , markerColor: "#67B6AA"},

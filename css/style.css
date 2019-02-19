@@ -2,8 +2,9 @@ body{
   font-family: brandon-grotesque, sans-serif;
   font-weight: 100;
   font-style: normal;
+  color: #ffffff;
 
-  background-color: #E0E0E0;
+  background-color: #1F2223;
 
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -22,18 +23,19 @@ body{
   transition: transform .2s;
 }
 .main1:hover, .main2:hover, .main3:hover, .main4:hover{
-  transform: scale(1.02);
+  transform: scale(1.03);
 }
 .logo{
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 410px;
-  height: 200px;
+  /* width: 410px;
+  height: 200px; */
 }
 
 h1, h2{
   font-weight: 300;
+  text-align: center;
 }
 .header{
   grid-area: title;
